@@ -31,3 +31,5 @@ C:\Users\Natsu\home\Mangas\obj\Debug\net7.0\refint\Mangas.dll
 C:\Users\Natsu\home\Mangas\obj\Debug\net7.0\Mangas.pdb
 C:\Users\Natsu\home\Mangas\obj\Debug\net7.0\Mangas.genruntimeconfig.cache
 C:\Users\Natsu\home\Mangas\obj\Debug\net7.0\ref\Mangas.dll
+C:\Users\Natsu\home\Mangas\obj\Debug\net7.0\Mangas.sourcelink.json
+C:\Users\Natsu\home\Mangas\bin\Debug\net7.0\Infraestructure\Data\javerages.library.data.json

@@ -1,33 +1,38 @@
 using Mangas.Domain.Entities;
+using Mangas.Infrastructure.Repositories;
 
-namespace Service.Features.Mangas;
+namespace Mangas.Service.Features.Mangas;
 
 public class MangaService
 {
-    private readonly List<Manga> _mangas = new();
+    private readonly MangaRepository _mangaRepository;
+
+    public MangaService(MangaRepository mangaRepository)
+    {
+        this._mangaRepository = mangaRepository;
+    }
 
     public IEnumerable<Manga> GetAll()
     {
-        return _mangas;
+        return _mangaRepository.GetAll();
     }
 
     public Manga GetById(int id)
     {
-        return _mangas.FirstOrDefault(manga => manga.id == id);
+        return _mangaRepository.GetById(id);
     }
 
     public void add(Manga manga)
     {
-        _mangas.Add(manga);
+        _mangaRepository.Add(manga);
     }
 
     public void update(Manga mangaToUpdate)
     {
         var manga = GetById(mangaToUpdate.id);
-        if (manga != null)
+        if (manga.id > 0)
         {
-            _mangas.Remove(manga);
-            _mangas.Add(mangaToUpdate);
+            _mangaRepository.Update(mangaToUpdate);
         }
     }
 
@@ -36,7 +41,7 @@ public class MangaService
         var manga = GetById(id);
         if (manga != null)
         {
-            _mangas.Remove(manga);
+            _mangaRepository.Delete(id);
         }
     }
 }
